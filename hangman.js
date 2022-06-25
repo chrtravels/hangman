@@ -72,6 +72,7 @@ let gameLoop = (wrongGuessCount = 0, response = '', input = '') => {
   }
   checkForLose();
 
+  // Asks for the user to guess a letter
   rl.question(`The word is ${randomWord.length} characters long.
 
 Guess a letter: `, (userInput) => {
@@ -85,11 +86,12 @@ Guess a letter: `, (userInput) => {
       }
     }
 
-  // Check for winner (not efficient but gets the job done in a pinch)
+  // Check for winner
   let checkForWin = () => {
     let count = '';
 
     word.forEach(letter => {
+      // Check if each character is a letter
       if ((/[a-zA-Z]/).test(letter)) {
         count += letter;
       }
@@ -103,7 +105,6 @@ Guess a letter: `, (userInput) => {
 
 
     // Generates a random response depending on the result of your guess
-
     let randomResponse = () => {
       if (randomWord.includes(userInput)) {
         response = `Right on, that's correct! There is a "${input}".` + '\n'
@@ -144,12 +145,12 @@ Guess a letter: `, (userInput) => {
   }
   let printWord = '  ' + wordDisplay() + '\n\n';
 
-  // Consolidates the display variables
+  // Consolidates the display variables (keeping as DRY as possible)
   let display = () => {
     console.log(printWord); // printers letters or underscores
     console.log(response);  // prints the response from the last guess
   }
-
+  // Changes display art based on guess count
   switch (wrongGuessCount) {
     case 0:
       console.log(gallows);
