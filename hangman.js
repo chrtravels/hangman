@@ -29,6 +29,8 @@ let startGame = () => {
   rl.question('Grab your gear and press "Enter" when you are ready to ride!', (answer) => {
     console.log("Let's go!");
     console. clear()
+    word = [];
+    randomWord = randomWordSelector();
     gameLoop(0);
   })
 }
@@ -40,7 +42,7 @@ let randomWordSelector = (arr = wordArr) => {
   let randomIndex = Math.floor(Math.random() * (max - min) + min);
 
   let word =  arr[randomIndex];
-  console.log(word);
+
   return word;
 
 }
@@ -52,7 +54,6 @@ let word = [];
 
 let gameLoop = (wrongGuessCount = 0, response = '', input = '') => {
   // Check for loser
-  console.log(wrongGuessCount);
   let checkForLose = () => {
     if (wrongGuessCount >= 7) {
       console.clear();
@@ -117,7 +118,6 @@ Guess a letter: `, (userInput) => {
     }
 
     randomResponse();
-
 
   });
 
@@ -194,12 +194,6 @@ Guess a letter: `, (userInput) => {
       gameLoop();
   }
 
-
-
-
-
 }
-
-
 
 startGame();
