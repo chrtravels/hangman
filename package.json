@@ -1,0 +1,20 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hangman.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrtravels/hangman.git"
+  },
+  "type": "module",
+  "author": "Chris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrtravels/hangman/issues"
+  },
+  "homepage": "https://github.com/chrtravels/hangman#readme"
+}
